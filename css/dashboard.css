@@ -100,7 +100,8 @@ body {
 .placeholder {
   margin-bottom: 20px;
 }
-.placeholder img {
+.placeholder canvas {
   display: inline-block;
   border-radius: 50%;
+  padding-left: 0px !important;
 }

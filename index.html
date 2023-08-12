@@ -14,15 +14,11 @@
 
     <!-- Bootstrap core CSS -->
     <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
-
+    <link href="css/style.css" rel="stylesheet">
     <!-- Custom styles for this template -->
     <link href="css/dashboard.css" rel="stylesheet">
 
-    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-      <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
-      <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
-    <![endif]-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
   </head>
 
   <body>
@@ -41,8 +37,9 @@
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right">
             <li><a href="#dashboard">Dashboard</a></li>
-            <li><a href="#services">Services</a></li>
             <li><a href="#profile">Profile</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#skills">Skills</a></li>
             <li><a href="#contact">Contact</a></li>
           </ul>
           <form class="navbar-form navbar-right">
@@ -57,71 +54,93 @@
         <div class="col-sm-3 col-md-2 sidebar">
           <ul class="nav nav-sidebar">
             <li class="active"><a href="#dashboard">Overview <span class="sr-only">(current)</span></a></li>
-            <li><a href="#services">Services</a></li>
             <li><a href="#profile">Profile</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#skills">Skills</a></li>
             <li><a href="#contact">Contact</a></li>
           </ul>
         </div>
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
           <h1 id="dashboard" class="page-header">Welcome to Indrajeet Portfolio</h1>
-
           <div  class="row placeholders">
             <div class="col-xs-6 col-sm-3 placeholder">
-              <img src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" width="200" height="200" class="img-responsive" alt="Generic placeholder thumbnail">
-              <h4>Label</h4>
-              <span class="text-muted">Something else</span>
+              <canvas class="row" id="backendChart" ></canvas>
+              <h4 class="row">Backend</h4>
+              <span class="text-muted">Proficiency Lebel 100%</span>
             </div>
             <div class="col-xs-6 col-sm-3 placeholder">
-              <img src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" width="200" height="200" class="img-responsive" alt="Generic placeholder thumbnail">
-              <h4>Label</h4>
-              <span class="text-muted">Something else</span>
+              <canvas class="row" id="frontendChart" ></canvas>
+              <h4 class="row">Frontend</h4>
+              <span class="text-muted">Proficiency Lebel 80%</span>
             </div>
             <div class="col-xs-6 col-sm-3 placeholder">
-              <img src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" width="200" height="200" class="img-responsive" alt="Generic placeholder thumbnail">
-              <h4>Label</h4>
-              <span class="text-muted">Something else</span>
+              <canvas class="row" id="cloudChart" ></canvas>
+              <h4 class="row">Cloud Deployment</h4>
+              <span class="text-muted">Proficiency Lebel 90%</span>
             </div>
             <div class="col-xs-6 col-sm-3 placeholder">
-              <img src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" width="200" height="200" class="img-responsive" alt="Generic placeholder thumbnail">
-              <h4>Label</h4>
-              <span class="text-muted">Something else</span>
+              <canvas class="row" id="unitTestingChart" ></canvas>
+              <h4 class="row">Unit Testing</h4>
+              <span class="text-muted">Proficiency Lebel 90%</span>
             </div>
-          </div>
-
-          <h2  id="services" class="sub-header">Services</h2>
-          <div class="table-responsive">
-            <table class="table table-striped">
-              <thead>
-                <tr>
-                  <th>#</th>
-                  <th>Header</th>
-                  <th>Header</th>
-                  <th>Header</th>
-                  <th>Header</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>1,001</td>
-                  <td>Lorem</td>
-                  <td>ipsum</td>
-                  <td>dolor</td>
-                  <td>sit</td>
-                </tr>
-                <tr>
-                  <td>1,002</td>
-                  <td>amet</td>
-                  <td>consectetur</td>
-                  <td>adipiscing</td>
-                  <td>elit</td>
-                </tr>
-              </tbody>
-            </table>
           </div>
           <h2  id="profile" class="sub-header">Profile</h2>
-          <div class="row"> Welcome to profile</div>
-          <h2  id="contact" class="sub-header">contact</h2>
-          <div class="row"> Welcome to contact</div>
+          <div class="row placeholders">
+            <p class="profile-content">
+              Hello!, I am Indrajeet Pradhan, A Full Stack Developer, I am strong in developing fullstack applications using Springboot, Maven and Angular.
+              Have experience on cloud deployment using docker and kubernetes. Seeking position to utilize my skills and experience in the information technology industry that offer
+            professional growth while being resourceful, innovative and flexible. Experienced level position in Software
+            Design/Development.</p>
+          </div>
+          <h2  id="experience" class="sub-header">Experience</h2>
+          <div>
+            <button type="button" class="collapsible">Tata Consultancy Services Limited, Kolkata, India
+              <span style="margin-left: 50%;">Mar 2022 - Current</span></button>
+            <div class="content">
+              <p>Adobe Experience Manager Sites Development & Maintenance(Maven Application)</p>
+              <ul>
+                <li>Have good understanding of AEM product overview</li>
+                <li>Real time experience on component and template development</li>
+                <li>Real time experience on crating azure deployment pipeline for maven application</li>
+                <li>Real time experience on user manaement and content authoring in aem</li>
+                <li>Development experience on junit test coverage enhancement</li>
+                <li>Real time experience on content creation, packaging and deployment in different environment</li>
+                <li>Real time experience on DevOps and Agile culture</li>
+                <li>Environments used are azure repo, board, pipeline </li>
+                <li>Tools used are InteliJ, Oracle Workstaion, Notepad++, Eclipse</li>
+              </ul>
+            </div>
+            <button type="button" class="collapsible">Solsynch Technologies Private Limited, Mumbai, India
+              <span style="margin-left: 47%;">Jan 2020 - Feb 2022</span></button>
+            <div class="content">
+              <dl>
+                <dt>Cost Of Risk Allocation (CORA)</dt>
+                <dd>- Worked on the development of this project using springboot, angular, mssql and datascience libraries</dd>
+                <dd>- Real time experience on developing spring rest api supporting mssql database</dd>
+                <dd>- Real Timesheet experience on developing ui using angular to consume rest api</dd>
+                <dd>- Real experience on dockering springboot and angular application and deploying in AWS AKS</dd>
+                <dt>SLIMS (Timesheet System)</dt>
+                <dd>- Worked on development of this project using django, angular and mssql</dd>
+                <dd>- Real time development experience for creating form crud operations and displying data in table view</dd>
+                <dd>- Real time deployment experience django and angular application</dd>
+                <dd>- Worked on timeseries forecasting and deployed python scripts in apache airflow</dd>
+              </dl>
+            </div>
+          </div>
+          <h2  id="skills" class="sub-header">Skills</h2>
+          <div class="row placeholders">
+            Skills goes here......
+          </div>
+
+          <h2  id="contact" class="sub-header">Contacts</h2>
+          <div class="contacts" >
+            <p>
+             Email: indrajeetpradhan1998@gmail.com<br>
+             Phno: +91 6371645584<br>
+             Address: NP-194, Nayapatty, Salt Lake<br>
+             Kolkata, West Bengal, 700102.<br>
+            </p>
+          </div>
         </div>
       </div>
     </div>
@@ -133,5 +152,19 @@
     <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
     <script src="bootstrap/js/bootstrap.min.js"></script>
     <!-- Just to make our placeholder images work. Don't actually copy the next line! -->
-     </body>
+    <script>
+        $(document).ready(function(){
+            $('.nav li').click(function()
+            {
+                if ($(document).find('.active') != null) {
+                    var currentElement = $(document).find('.active');
+                    currentElement.removeClass('active');
+                    $(this).addClass('active');
+                }
+            });
+        }); 
+        
+    </script>
+    <script src="js/script.js" type="text/javascript"></script>
+    </body>
 </html>
